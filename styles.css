@@ -1,210 +1,225 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Fuente más moderna */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #1c1c1c; /* Negro muy oscuro para un fondo más profundo y color de fallback */
-    color: #e0e0e0; /* Gris claro para el texto general */
-    line-height: 1.6; /* Mejora la legibilidad del texto */
+    background-color: #1c1c1c; /* Fallback color */
+    color: #e0e0e0;
+    line-height: 1.6;
 
     /* --- Código para el fondo integrado desde la URL --- */
-    background-image: url('https://live.staticflickr.com/3105/2912301125_9ca1cf6dbd_b.jpg');
-    background-size: cover; /* Cubre todo el área sin distorsionar la imagen */
-    background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
-    background-position: center center; /* Centra la imagen */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-image: url('https://scontent.fgua2-1.fna.fbcdn.net/v/t39.30808-6/278971840_352107323621072_6153420095657521968_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=rB6qYbWj_m8Q7kNvwF6hZ7X&_nc_oc=AdmLxMI-mdstVS2CKmKNneWdlFlzCCcACJ9Ik2HQOJ-GmdEgvO5i9UauOAjHpVdhqkqVPss3aPM935gHFAbEPTuS&_nc_zt=23&_nc_ht=scontent.fgua2-1.fna&_nc_gid=Zmvuk1p6lM_YuaWp0e4SWw&oh=00_AfRSBd-DVkK7kkU0TsNB_Y7lf7FBdzskoO4xhYICkS_FVA&oe=687C6B72');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
     /* --- Fin del código para el fondo --- */
 }
 
 .header {
-    background-color: #0d0d0d; /* Negro aún más intenso para el encabezado */
-    color: #ffd700; /* Amarillo vibrante */
-    padding: 30px 20px; /* Más padding para que el título respire */
+    background-color: #0d0d0d;
+    color: #ffd700;
+    padding: 30px 20px;
     text-align: center;
-    border-bottom: 5px solid #ffd700; /* Borde más pronunciado */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* Sombra sutil para profundidad */
-    position: relative; /* Importante para el posicionamiento del logo si lo añades después */
-    overflow: hidden; /* Oculta cualquier parte del logo que se salga del header */
+    border-bottom: 5px solid #ffd700;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    position: relative; /* CRUCIAL para el posicionamiento absoluto del logo */
+    overflow: hidden;
 }
 
 .header h1 {
     margin: 0;
-    font-size: 2.8em; /* Tamaño de fuente más grande para el título principal */
-    letter-spacing: 2px; /* Espaciado entre letras para un look más "diseño" */
-    text-transform: uppercase; /* Mayúsculas para el título */
-    /* padding-left: 100px; /* Descomenta y ajusta si añades un logo a la izquierda */
+    font-size: 2.8em;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    /* Ajusta el padding-left para dejar espacio al logo en la izquierda */
+    padding-left: 120px; /* Ajusta este valor según el tamaño deseado del logo */
+    text-align: center; /* Centra el texto H1 después del padding */
 }
 
-/* ESTILOS PARA EL LOGO (descomenta y personaliza cuando tengas tu logo) */
-/*
+/* ESTILOS PARA EL LOGO */
 .header-logo {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 80px;
-    height: auto;
-    z-index: 10;
-    border-radius: 50%;
-    box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+    position: absolute; /* Posiciona el logo respecto al .header */
+    top: 20px; /* Distancia desde la parte superior */
+    left: 20px; /* Distancia desde la izquierda */
+    width: 90px; /* Ancho del logo, ajusta según sea necesario */
+    height: auto; /* Mantiene la proporción del logo */
+    z-index: 10; /* Asegura que el logo esté por encima */
+    border-radius: 8px; /* Pequeño redondeo en las esquinas */
+    /* Como el logo tiene fondo blanco, una sombra sutil o un borde pueden ayudar a integrarlo */
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.4); /* Sombra luminosa amarillo-dorada */
+    border: 2px solid rgba(255, 215, 0, 0.6); /* Borde sutil en amarillo-dorado */
 }
-*/
 
+/* Ajustes para que el contenido sea más legible sobre el fondo */
 .container {
-    padding: 30px; /* Más padding interno */
-    max-width: 1400px; /* Aumenta el ancho máximo para más espacio */
-    margin: 30px auto; /* Más margen para separar del encabezado */
-    background-color: rgba(40, 40, 40, 0.9); /* Gris oscuro con cierta transparencia para que se vea el fondo */
-    border-radius: 12px; /* Bordes más redondeados */
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.6); /* Sombra más fuerte */
+    padding: 30px;
+    max-width: 1400px;
+    margin: 30px auto;
+    background-color: rgba(40, 40, 40, 0.92); /* Gris oscuro con MÁS transparencia para ver el fondo */
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
 }
 
 .year-section {
-    margin-bottom: 50px; /* Más espacio entre años */
-    border: 1px solid #3d3d3d; /* Borde ligeramente más claro */
-    border-radius: 10px; /* Bordes redondeados */
-    padding: 25px; /* Más padding */
-    background-color: rgba(51, 51, 51, 0.9); /* Gris medio con cierta transparencia */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); /* Sombra para elevar la sección */
+    margin-bottom: 50px;
+    border: 1px solid #3d3d3d;
+    border-radius: 10px;
+    padding: 25px;
+    background-color: rgba(51, 51, 51, 0.92); /* Gris medio con MÁS transparencia */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
+.course {
+    background-color: rgba(74, 74, 74, 0.95); /* Gris para las tarjetas de curso con MÁS transparencia */
+    border: 1px solid #666666;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.3s ease;
+    min-height: 160px;
+}
+
+.course.locked {
+    background-color: rgba(47, 47, 47, 0.85); /* Gris más oscuro con MÁS transparencia */
+    border-color: #3a3a3a;
+    color: #777777;
+    pointer-events: none;
+    opacity: 0.7;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.course.unlocked {
+    background-color: rgba(90, 90, 90, 0.98); /* Gris un poco más claro con MÁS transparencia */
+    border-color: #ffd700;
+    color: #ffffff;
+    opacity: 1;
+    cursor: pointer;
+}
+
+/* El resto del CSS sigue igual que la versión mejorada anterior */
+
 .year-section h2 {
-    color: #ffd700; /* Amarillo */
+    color: #ffd700;
     text-align: center;
     margin-top: 0;
-    padding-bottom: 20px; /* Más padding inferior */
-    border-bottom: 2px solid #4a4a4a; /* Borde más oscuro y sólido */
-    font-size: 2.2em; /* Título de año más grande */
+    padding-bottom: 20px;
+    border-bottom: 2px solid #4a4a4a;
+    font-size: 2.2em;
     text-transform: uppercase;
     letter-spacing: 1.5px;
 }
 
 .semester-section {
-    margin-bottom: 40px; /* Más espacio entre semestres */
+    margin-bottom: 40px;
 }
 
 .semester-section h3 {
-    color: #f0f0f0; /* Gris muy claro para los títulos de semestre */
-    border-bottom: 1px solid #5a5a5a; /* Borde sólido */
-    padding-bottom: 12px; /* Más padding */
-    margin-top: 35px; /* Más margen superior */
-    font-size: 1.8em; /* Título de semestre más grande */
+    color: #f0f0f0;
+    border-bottom: 1px solid #5a5a5a;
+    padding-bottom: 12px;
+    margin-top: 35px;
+    font-size: 1.8em;
     letter-spacing: 1px;
 }
 
 .course-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Aumenta el min-width */
-    gap: 25px; /* Más espacio entre las tarjetas de curso */
-    margin-top: 25px; /* Más margen superior */
-}
-
-.course {
-    background-color: rgba(74, 74, 74, 0.9); /* Gris para las tarjetas de curso con transparencia */
-    border: 1px solid #666666; /* Borde más visible */
-    border-radius: 10px; /* Bordes más redondeados */
-    padding: 20px; /* Más padding interno */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Sombra más fuerte */
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out, background-color 0.3s ease;
-    min-height: 160px; /* Altura mínima para que las tarjetas se vean uniformes */
-}
-
-.course.locked {
-    background-color: rgba(47, 47, 47, 0.8); /* Gris más oscuro para cursos bloqueados con transparencia */
-    border-color: #3a3a3a;
-    color: #777777; /* Texto más tenue */
-    pointer-events: none;
-    opacity: 0.7; /* Ligeramente más opaco */
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* Sombra más suave */
-}
-
-.course.unlocked {
-    background-color: rgba(90, 90, 90, 0.95); /* Un gris un poco más claro para cursos desbloqueados con transparencia */
-    border-color: #ffd700; /* Borde amarillo para destacarlos */
-    color: #ffffff;
-    opacity: 1;
-    cursor: pointer; /* Indica que se puede interactuar */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
 }
 
 .course.approved {
-    background-color: #ffd700; /* Amarillo brillante para cursos aprobados (sin transparencia para resaltar) */
+    background-color: #ffd700;
     border-color: #e0c200;
-    color: #222222; /* Texto muy oscuro para un contraste nítido */
-    box-shadow: 0 0 25px rgba(255, 215, 0, 0.8); /* Sombra luminosa */
-    transform: translateY(-8px); /* Ligeramente más elevado */
+    color: #222222;
+    box-shadow: 0 0 25px rgba(255, 215, 0, 0.8);
+    transform: translateY(-8px);
 }
 
 .course h4 {
-    color: #ffd700; /* Amarillo para el título del curso (general) */
+    color: #ffd700;
     margin-top: 0;
-    margin-bottom: 12px; /* Más espacio debajo del título */
-    font-size: 1.4em; /* Título del curso más grande */
+    margin-bottom: 12px;
+    font-size: 1.4em;
     line-height: 1.3;
 }
 
 .course.approved h4 {
-    color: #222222; /* Título del curso en negro cuando está aprobado */
+    color: #222222;
 }
 
 .course p {
-    font-size: 1em; /* Texto un poco más grande */
-    margin-bottom: 18px; /* Más espacio debajo de la descripción */
-    flex-grow: 1; /* Permite que el párrafo ocupe el espacio disponible */
+    font-size: 1em;
+    margin-bottom: 18px;
+    flex-grow: 1;
 }
 
 .approve-btn {
-    background-color: #6a6a6a; /* Gris medio para el botón por defecto */
+    background-color: #6a6a6a;
     color: #ffffff;
     border: none;
-    padding: 12px 20px; /* Más padding para el botón */
-    border-radius: 6px; /* Bordes más redondeados */
+    padding: 12px 20px;
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 1em; /* Tamaño de fuente estándar */
-    font-weight: bold; /* Texto en negrita */
+    font-size: 1em;
+    font-weight: bold;
     transition: background-color 0.3s ease, transform 0.1s ease;
-    width: 100%; /* El botón ocupa todo el ancho */
+    width: 100%;
 }
 
 .approve-btn:hover:not(:disabled) {
-    background-color: #ffc107; /* Amarillo un poco más suave en hover */
-    color: #1c1c1c; /* Texto oscuro en hover */
-    transform: translateY(-2px); /* Efecto ligero de "levantar" */
+    background-color: #ffc107;
+    color: #1c1c1c;
+    transform: translateY(-2px);
 }
 
 .approve-btn:active:not(:disabled) {
-    transform: translateY(0); /* Vuelve a la posición original al hacer click */
+    transform: translateY(0);
 }
 
 .approve-btn:disabled {
-    background-color: #3b3b3b; /* Gris más oscuro para el botón deshabilitado */
+    background-color: #3b3b3b;
     color: #666666;
     cursor: not-allowed;
     box-shadow: none;
 }
 
 .course.unlocked .approve-btn {
-    background-color: #4CAF50; /* Verde vibrante para botón de cursos desbloqueados */
+    background-color: #4CAF50;
     color: #ffffff;
 }
 
 .course.unlocked .approve-btn:hover {
-    background-color: #45a049; /* Verde más oscuro en hover */
+    background-color: #45a049;
 }
 
 .course.approved .approve-btn {
-    background-color: #222222; /* Negro para el botón de cursos aprobados */
-    color: #ffd700; /* Amarillo para el texto */
+    background-color: #222222;
+    color: #ffd700;
     font-weight: bolder;
     cursor: default;
     box-shadow: none;
-    pointer-events: none; /* Deshabilita cualquier interacción */
+    pointer-events: none;
 }
 
 /* Media Queries para adaptabilidad */
 @media (max-width: 768px) {
     .header h1 {
         font-size: 2em;
+        padding-left: 0; /* Remover padding en pantallas pequeñas si el logo se mueve o es más pequeño */
+    }
+
+    .header-logo {
+        position: static; /* Cambiar a posición estática para que fluya con el contenido */
+        display: block; /* Para que ocupe su propia línea */
+        margin: 10px auto; /* Centrar el logo en pantallas pequeñas */
+        width: 70px; /* Reducir tamaño */
+        box-shadow: none;
+        border: none;
     }
 
     .year-section h2 {
@@ -240,6 +255,6 @@ body {
     }
 
     .course-grid {
-        grid-template-columns: 1fr; /* Una columna en pantallas muy pequeñas */
+        grid-template-columns: 1fr;
     }
 }
