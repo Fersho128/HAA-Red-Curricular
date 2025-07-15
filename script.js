@@ -1,7 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Select all course elements once the DOM is fully loaded
     const courses = document.querySelectorAll('.course');
 
-    // Función para obtener el estado guardado de los cursos
+    // --- Utility Functions for Local Storage ---
+    /**
+     * Retrieves the saved course states from localStorage.
+     * @returns {Object} An object where keys are course IDs and values are their states ('approved' or undefined).
+     */
     const getSavedCourseStates = () => {
         try {
             const savedStates = localStorage.getItem('courseStates');
@@ -12,7 +17,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Función para guardar el estado de los cursos
+    /**
+     * Saves the current course states to localStorage.
+     * @param {Object} states - The object containing course states.
+     */
     const saveCourseStates = (states) => {
         try {
             localStorage.setItem('courseStates', JSON.stringify(states));
@@ -21,73 +29,97 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // Initialize course states from localStorage
     let courseStates = getSavedCourseStates();
 
-    // Función para verificar si un curso está aprobado
+    // --- Core Logic Functions ---
+    /**
+     * Checks if a specific course has been approved.
+     * @param {string} courseId - The ID of the course.
+     * @returns {boolean} True if the course is approved, false otherwise.
+     */
     const isApproved = (courseId) => {
         return courseStates[courseId] === 'approved';
     };
 
-    // Función para verificar si todos los prerrequisitos de un curso están aprobados
-    const checkPrerequisites = (course) => {
-        const prerequisitesAttr = course.dataset.prerequisites;
+    /**
+     * Checks if all prerequisites for a given course are approved.
+     * @param {HTMLElement} courseElement - The course DOM element.
+     * @returns {boolean} True if all prerequisites are met, false otherwise.
+     */
+    const checkPrerequisites = (courseElement) => {
+        const prerequisitesAttr = courseElement.dataset.prerequisites;
         if (!prerequisitesAttr) {
-            return true; // No tiene prerrequisitos, siempre está disponible
+            return true; // No prerequisites, so it's always available.
         }
+        // Split by comma, trim whitespace, and check if all are approved.
         const prerequisites = prerequisitesAttr.split(',').map(req => req.trim());
         return prerequisites.every(reqId => isApproved(reqId));
     };
 
-    // Función para actualizar el estado visual y de interactividad de un curso
-    const updateCourseState = (course) => {
-        const courseId = course.dataset.id;
-        const approveBtn = course.querySelector('.approve-btn');
+    /**
+     * Updates the visual and interactive state of a single course element.
+     * This function adds/removes CSS classes and enables/disables the button.
+     * @param {HTMLElement} courseElement - The course DOM element to update.
+     */
+    const updateCourseState = (courseElement) => {
+        const courseId = courseElement.dataset.id;
+        const approveBtn = courseElement.querySelector('.approve-btn');
+
+        // Reset classes first to ensure correct state application
+        courseElement.classList.remove('locked', 'unlocked', 'approved');
 
         if (isApproved(courseId)) {
-            course.classList.add('approved');
-            course.classList.remove('locked', 'unlocked');
+            courseElement.classList.add('approved');
             approveBtn.textContent = 'Aprobado';
             approveBtn.disabled = true;
-        } else if (checkPrerequisites(course)) {
-            course.classList.add('unlocked');
-            course.classList.remove('locked', 'approved');
+        } else if (checkPrerequisites(courseElement)) {
+            courseElement.classList.add('unlocked');
             approveBtn.textContent = 'Aprobar';
             approveBtn.disabled = false;
         } else {
-            course.classList.add('locked');
-            course.classList.remove('unlocked', 'approved');
+            courseElement.classList.add('locked');
             approveBtn.textContent = 'Bloqueado';
             approveBtn.disabled = true;
         }
     };
 
-    // Inicializar el estado de todos los cursos al cargar la página
-    courses.forEach(course => {
-        updateCourseState(course);
-    });
-
-    // Función para procesar la aprobación de un curso
+    /**
+     * Marks a course as approved and triggers a full UI update.
+     * @param {string} courseId - The ID of the course to approve.
+     */
     const approveCourse = (courseId) => {
-        courseStates[courseId] = 'approved';
-        saveCourseStates(courseStates);
-        updateAllCourses(); // Volver a verificar todos los cursos después de un cambio
+        // Only proceed if the course is not already approved
+        if (!isApproved(courseId)) {
+            courseStates[courseId] = 'approved';
+            saveCourseStates(courseStates); // Save the new state
+            updateAllCourses(); // Re-evaluate and update all courses
+        }
     };
 
-    // Función para actualizar el estado de todos los cursos (útil después de un cambio)
+    /**
+     * Iterates through all courses and updates their states.
+     * This is crucial after any course approval to unlock dependent courses.
+     */
     const updateAllCourses = () => {
-        courses.forEach(course => {
-            updateCourseState(course);
+        courses.forEach(courseElement => {
+            updateCourseState(courseElement);
         });
     };
 
-    // Añadir event listeners a los botones
-    courses.forEach(course => {
-        const approveBtn = course.querySelector('.approve-btn');
+    // --- Event Handlers and Initial Setup ---
+    // Attach click listeners to all approve buttons
+    courses.forEach(courseElement => {
+        const approveBtn = courseElement.querySelector('.approve-btn');
         approveBtn.addEventListener('click', () => {
-            const courseId = course.dataset.id;
-            if (!isApproved(courseId)) { // Solo si no está ya aprobado
+            // Check if the button is not disabled before trying to approve
+            if (!approveBtn.disabled) {
+                const courseId = courseElement.dataset.id;
                 approveCourse(courseId);
             }
         });
     });
+
+    // Initial update of all course states when the page loads
+    updateAllCourses();
 });
