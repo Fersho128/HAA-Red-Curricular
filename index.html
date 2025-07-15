@@ -1,1 +1,365 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malla Curricular</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <img src="https://scontent.fgua2-1.fna.fbcdn.net/v/t39.30808-6/278971840_352107323621072_6153420095657521968_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=rB6qYbWj_m8Q7kNvwF6hZ7X&_nc_oc=AdmLxMI-mdstVS2CKmKNneWdlFlzCCcACJ9Ik2HQOJ-GmdEgvO5i9UauOAjHpVdhqkqVPss3aPM935gHFAbEPTuS&_nc_zt=23&_nc_ht=scontent.fgua2-1.fna&_nc_gid=Zmvuk1p6lM_YuaWp0e4SWw&oh=00_AfRSBd-DVkK7kkU0TsNB_Y7lf7FBdzskoO4xhYICkexuyA&oe=687C6B72" alt="Logo de la Arquitectura" class="header-logo">
+        <h1>Malla Curricular de Arquitectura</h1>
+    </div>
+    <div class="container">
+        <div class="year-section">
+            <h2>Primer Año</h2>
+            <div class="semester-section">
+                <h3>Primer Semestre</h3>
+                <div class="course-grid">
+                    <div class="course" data-id="teoriaComunicacion" data-unlocks="teoriaMetodosDiseno1">
+                        <h4>Teoría de la Comunicación</h4>
+                        <p>Créditos: 3</p>
+                        <button class="approve-btn">Aprobado</button>
+                    </div>
+                    <div class="course" data-id="metodosTecnicasInvestigacion" data-unlocks="sociologiaDesarrolloHumano,teoriaMetodosDiseno1,disenoArquitectonico1,disenoArquitectonico1">
+                        <h4>Métodos y Técnicas de Investigación</h4>
+                        <p>Créditos: 3</p>
+                        <button class="approve-btn">Aprobado</button>
+                    </div>
+                    <div class="course" data-id="fundamentosDiseno" data-unlocks="teoriaMetodosDiseno1,disenoArquitectonico1">
+                        <h4>Fundamentos del Diseño</h4>
+                        <p>Créditos: 5</p>
+                        <button class="approve-btn">Aprobado</button>
+                    </div>
+                    <div class="course" data-id="mediosExpresion" data-unlocks="disenoArquitectonico1,dibujoNatural">
+                        <h4>Medios de Expresión</h4>
+                        <p>Créditos: 4</p>
+                        <button class="approve-btn">Aprobado</button>
+                    </div>
+                    <div class="course" data-id="dibujoGeometrico" data-unlocks="disenoArquitectonico1,dibujoTecnico,dibujoProyectual">
+                        <h4>Dibujo Geométrico</h4>
+                        <p>Créditos: 4</p>
+                        <button class="approve-btn">Aprobado</button>
+                    </div>
+                    <div class="course" data-id="geometria" data-unlocks="disenoArquitectonico1,dibujoTecnico,dibujoProyectual">
+                        <h4>Geometría</h4>
+                        <p>Créditos: 4</p>
+                        <button class="approve-btn">Aprobado</button>
+                    </div>
+                    <div class="course" data-id="matematica1" data-unlocks="matematica2">
+                        <h4>Matemática 1</h4>
+                        <p>Créditos: 4</p>
+                        <button class="approve-btn">Aprobado</button>
+                    </div>
+                </div>
+            </div>
+            <div class="semester-section">
+                <h3>Segundo Semestre</h3>
+                <div class="course-grid">
+                    <div class="course" data-id="sociologiaDesarrolloHumano" data-prerequisites="metodosTecnicasInvestigacion" data-unlocks="ecologiaHumana">
+                        <h4>Sociología y Desarrollo Humano</h4>
+                        <p>Créditos: 3</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="teoriaMetodosDiseno1" data-prerequisites="teoriaComunicacion,metodosTecnicasInvestigacion,fundamentosDiseno" data-unlocks="historiaArquitecturaArte1,disenoArquitectonico2">
+                        <h4>Teoría y Métodos del Diseño 1</h4>
+                        <p>Créditos: 3</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="disenoArquitectonico1" data-prerequisites="metodosTecnicasInvestigacion,fundamentosDiseno,mediosExpresion,dibujoGeometrico,geometria" data-unlocks="disenoArquitectonico2">
+                        <h4>Diseño Arquitectónico 1</h4>
+                        <p>Créditos: 6</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="dibujoNatural" data-prerequisites="mediosExpresion" data-unlocks="disenoArquitectonico2,presentacion1">
+                        <h4>Dibujo Natural</h4>
+                        <p>Créditos: 4</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="dibujoTecnico" data-prerequisites="dibujoGeometrico,geometria" data-unlocks="disenoArquitectonico2,presentacion1,herramientasDigitales1,topografia">
+                        <h4>Dibujo Técnico</h4>
+                        <p>Créditos: 5</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="dibujoProyectual" data-prerequisites="dibujoGeometrico,geometria" data-unlocks="disenoArquitectonico2,presentacion1,herramientasDigitales1,topografia">
+                        <h4>Dibujo Proyectual</h4>
+                        <p>Créditos: 4</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="matematica2" data-prerequisites="matematica1" data-unlocks="topografia,fisica1">
+                        <h4>Matemática 2</h4>
+                        <p>Créditos: 4</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
+        <div class="year-section">
+            <h2>Segundo Año</h2>
+            <div class="semester-section">
+                <h3>Tercer Semestre</h3>
+                <div class="course-grid">
+                    <div class="course" data-id="historiaArquitecturaArte1" data-prerequisites="teoriaMetodosDiseno1" data-unlocks="historiaArquitecturaArte2,disenoArquitectonico3">
+                        <h4>Historia de la Arquitectura 1</h4>
+                        <p>Créditos: 4</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="ecologiaHumana" data-prerequisites="sociologiaDesarrolloHumano" data-unlocks="elementosAnalisisTerritorial">
+                        <h4>Ecología Humana</h4>
+                        <p>Créditos: 3</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="disenoArquitectonico2" data-prerequisites="teoriaMetodosDiseno1,disenoArquitectonico1,dibujoNatural,dibujoTecnico,dibujoProyectual" data-unlocks="disenoArquitectonico3">
+                        <h4>Diseño Arquitectónico 2</h4>
+                        <p>Créditos: 6</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="presentacion1" data-prerequisites="dibujoNatural,dibujoTecnico,dibujoProyectual" data-unlocks="disenoArquitectonico3,modelosArquitectonicos1">
+                        <h4>Presentación 1</h4>
+                        <p>Créditos: 5</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="herramientasDigitales1" data-prerequisites="dibujoTecnico,dibujoProyectual" data-unlocks="disenoArquitectonico3,herramientasDigitales2">
+                        <h4>Herramientas Digitales 1</h4>
+                        <p>Créditos: 5</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="topografia" data-prerequisites="matematica2,dibujoTecnico,dibujoProyectual" data-unlocks="disenoArquitectonico3,modelosArquitectonicos1">
+                        <h4>Topografía</h4>
+                        <p>Créditos: 4</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="fisica1" data-prerequisites="matematica2" data-unlocks="introduccionConstruccionMaterialesConstruccion">
+                        <h4>Física 1</h4>
+                        <p>Créditos: 4</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                </div>
+            </div>
+            <div class="semester-section">
+                <h3>Cuarto Semestre</h3>
+                <div class="course-grid">
+                    <div class="course" data-id="historiaArquitecturaArte2" data-prerequisites="historiaArquitecturaArte1" data-unlocks="historiaArquitecturaArte3,teoriaArquitectura1,disenoArquitectonico4">
+                        <h4>Historia de la Arquitectura y el Arte 2</h4>
+                        <p>Créditos: 4</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="elementosAnalisisTerritorial" data-prerequisites="ecologiaHumana" data-unlocks="historiaArquitecturaArte3,elementosAnalisisUrbano,manejoDisenoAmbiental1,disenoArquitectonico4">
+                        <h4>Elementos del Análisis Territorial</h4>
+                        <p>Créditos: 3</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="disenoArquitectonico3" data-prerequisites="historiaArquitecturaArte1,disenoArquitectonico2,presentacion1,herramientasDigitales1,topografia" data-unlocks="disenoArquitectonico4">
+                        <h4>Diseño Arquitectónico 3</h4>
+                        <p>Créditos: 7</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="modelosArquitectonicos1" data-prerequisites="presentacion1,topografia" data-unlocks="disenoArquitectonico4,modelosArquitectonicos2,dibujoConstructivo,herramientasDigitales3">
+                        <h4>Modelos Arquitectónicos 1</h4>
+                        <p>Créditos: 5</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="herramientasDigitales2" data-prerequisites="herramientasDigitales1" data-unlocks="disenoArquitectonico4,herramientasDigitales3">
+                        <h4>Herramientas Digitales 2</h4>
+                        <p>Créditos: 5</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="introduccionConstruccionMaterialesConstruccion" data-prerequisites="fisica1" data-unlocks="disenoArquitectonico4,construccion1">
+                        <h4>Introducción a la Construcción y Materiales de Construcción</h4>
+                        <p>Créditos: 4</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="fisica2" data-prerequisites="fisica1" data-unlocks="disenoArquitectonico4,resistenciaMateriales">
+                        <h4>Física 2</h4>
+                        <p>Créditos: 4</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="year-section">
+            <h2>Tercer Año</h2>
+            <div class="semester-section">
+                <h3>Quinto Semestre</h3>
+                <div class="course-grid">
+                    <div class="course" data-id="historiaArquitecturaArte3" data-prerequisites="historiaArquitecturaArte2,elementosAnalisisTerritorial" data-unlocks="teoriaArquitectura2,disenoArquitectonico5">
+                        <h4>Historia de la Arquitectura y el Arte 3</h4>
+                        <p>Créditos: 4</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="teoriaArquitectura1" data-prerequisites="historiaArquitecturaArte2" data-unlocks="teoriaArquitectura2">
+                        <h4>Teoría de la Arquitectura 1</h4>
+                        <p>Créditos: 3</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="elementosAnalisisUrbano" data-prerequisites="elementosAnalisisTerritorial" data-unlocks="introduccionPlanificacionUrbana">
+                        <h4>Elementos del Análisis Urbano</h4>
+                        <p>Créditos: 3</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="manejoDisenoAmbiental1" data-prerequisites="elementosAnalisisTerritorial" data-unlocks="manejoDisenoAmbiental2,disenoArquitectonico5">
+                        <h4>Manejo y Diseño Ambiental 1</h4>
+                        <p>Créditos: 3</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="disenoArquitectonico4" data-prerequisites="historiaArquitecturaArte2,elementosAnalisisTerritorial,disenoArquitectonico3,modelosArquitectonicos1,herramientasDigitales2,introduccionConstruccionMaterialesConstruccion,fisica2" data-unlocks="disenoArquitectonico5">
+                        <h4>Diseño Arquitectónico 4</h4>
+                        <p>Créditos: 7</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="construccion1" data-prerequisites="introduccionConstruccionMaterialesConstruccion" data-unlocks="disenoArquitectonico5,construccion2,instalaciones1">
+                        <h4>Construcción 1</h4>
+                        <p>Créditos: 4</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="resistenciaMateriales" data-prerequisites="fisica2" data-unlocks="disenoArquitectonico5,calculoEstructural1,tipologiaLogicaEstructural1">
+                        <h4>Resistencia de Materiales</h4>
+                        <p>Créditos: 4</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                </div>
+            </div>
+            <div class="semester-section">
+                <h3>Sexto Semestre</h3>
+                <div class="course-grid">
+                    <div class="course" data-id="teoriaArquitectura2" data-prerequisites="historiaArquitecturaArte3,teoriaArquitectura1" data-unlocks="analisisArquitecturaPrehispanica,teoriaArquitectura3,disenoArquitectonico6">
+                        <h4>Teoría de la Arquitectura 2</h4>
+                        <p>Créditos: 3</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="introduccionPlanificacionUrbana" data-prerequisites="elementosAnalisisUrbano" data-unlocks="introduccionDisenoUrbano,investigacion1FormulacionProyecto,disenoArquitectonico6">
+                        <h4>Introducción a la Planificación Urbana</h4>
+                        <p>Créditos: 3</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="disenoArquitectonico5" data-prerequisites="historiaArquitecturaArte3,manejoDisenoAmbiental1,disenoArquitectonico4,construccion1,resistenciaMateriales" data-unlocks="disenoArquitectonico6,investigacion1FormulacionProyecto">
+                        <h4>Diseño Arquitectónico 5</h4>
+                        <p>Créditos: 7</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="construccion2" data-prerequisites="construccion1" data-unlocks="disenoArquitectonico6,construccion3,instalaciones2">
+                        <h4>Construcción 2</h4>
+                        <p>Créditos: 4</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="instalaciones1" data-prerequisites="construccion1" data-unlocks="instalaciones2,construccion3">
+                        <h4>Instalaciones 1</h4>
+                        <p>Créditos: 4</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="calculoEstructural1" data-prerequisites="resistenciaMateriales" data-unlocks="disenoArquitectonico6,calculoEstructural2">
+                        <h4>Cálculo Estructural 1</h4>
+                        <p>Créditos: 4</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="tipologiaLogicaEstructural1" data-prerequisites="resistenciaMateriales" data-unlocks="disenoArquitectonico6,construccion3,calculoEstructural2">
+                        <h4>Tipología y Lógica Estructural 1</h4>
+                        <p>Créditos: 3</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="year-section">
+            <h2>Cuarto Año</h2>
+            <div class="semester-section">
+                <h3>Séptimo Semestre</h3>
+                <div class="course-grid">
+                    <div class="course" data-id="analisisArquitecturaPrehispanica" data-prerequisites="teoriaArquitectura2" data-unlocks="analisisArquitecturaColonial">
+                        <h4>Análisis de Arquitectura Prehispánica</h4>
+                        <p>Créditos: 3</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="teoriaArquitectura3" data-prerequisites="teoriaArquitectura2" data-unlocks="criticaArquitectura1">
+                        <h4>Teoría de la Arquitectura 3</h4>
+                        <p>Créditos: 3</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="manejoDisenoAmbiental2" data-prerequisites="manejoDisenoAmbiental1" data-unlocks="manejoDisenoAmbiental3">
+                        <h4>Manejo y Diseño Ambiental 2</h4>
+                        <p>Créditos: 3</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="investigacion1FormulacionProyecto" data-prerequisites="introduccionPlanificacionUrbana,disenoArquitectonico5" data-unlocks="investigacion2FormulacionProyecto,disenoArquitectonico7">
+                        <h4>Investigación 1 y Formulación de Proyecto</h4>
+                        <p>Créditos: 4</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="disenoArquitectonico6" data-prerequisites="teoriaArquitectura2,introduccionPlanificacionUrbana,disenoArquitectonico5,construccion2,calculoEstructural1,tipologiaLogicaEstructural1" data-unlocks="disenoArquitectonico7">
+                        <h4>Diseño Arquitectónico 6</h4>
+                        <p>Créditos: 8</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="dibujoConstructivo" data-prerequisites="modelosArquitectonicos1" data-unlocks="presentacion2">
+                        <h4>Dibujo Constructivo</h4>
+                        <p>Créditos: 3</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="herramientasDigitales3" data-prerequisites="modelosArquitectonicos1,herramientasDigitales2" data-unlocks="disenoArquitectonico7,herramientasDigitales4">
+                        <h4>Herramientas Digitales 3</h4>
+                        <p>Créditos: 4</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="construccion3" data-prerequisites="construccion2,instalaciones1,tipologiaLogicaEstructural1" data-unlocks="disenoArquitectonico7,construccion4,administracion1,presupuestos,instalaciones3">
+                        <h4>Construcción 3</h4>
+                        <p>Créditos: 4</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="instalaciones2" data-prerequisites="construccion2,instalaciones1" data-unlocks="disenoArquitectonico7,instalaciones3,administracion1,presupuestos">
+                        <h4>Instalaciones 2</h4>
+                        <p>Créditos: 4</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="calculoEstructural2" data-prerequisites="calculoEstructural1,tipologiaLogicaEstructural1" data-unlocks="disenoArquitectonico7,practicaIntegrada1,dimensionamientoEstructural1">
+                        <h4>Cálculo Estructural 2</h4>
+                        <p>Créditos: 4</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                </div>
+            </div>
+            <div class="semester-section">
+                <h3>Octavo Semestre</h3>
+                <div class="course-grid">
+                    <div class="course" data-id="analisisArquitecturaColonial" data-prerequisites="analisisArquitecturaPrehispanica" data-unlocks="conservacionMonumentos">
+                        <h4>Análisis de Arquitectura Colonial</h4>
+                        <p>Créditos: 3</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="criticaArquitectura1" data-prerequisites="teoriaArquitectura3" data-unlocks="criticaArquitectura2">
+                        <h4>Crítica de la Arquitectura 1</h4>
+                        <p>Créditos: 3</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="introduccionDisenoUrbano" data-prerequisites="introduccionPlanificacionUrbana" data-unlocks="introduccionPlanificacionTerritorial">
+                        <h4>Introducción al Diseño Urbano</h4>
+                        <p>Créditos: 3</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="manejoDisenoAmbiental3" data-prerequisites="manejoDisenoAmbiental2">
+                        <h4>Manejo y Diseño Ambiental 3</h4>
+                        <p>Créditos: 3</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="investigacion2FormulacionProyecto" data-prerequisites="investigacion1FormulacionProyecto,disenoArquitectonico7" data-unlocks="investigacion3FormulacionProyecto,disenoArquitectonico9">
+                        <h4>Investigación 2 y Formulación de Proyecto</h4>
+                        <p>Créditos: 4</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="disenoArquitectonico7" data-prerequisites="investigacion1FormulacionProyecto,disenoArquitectonico6,herramientasDigitales3,construccion3,instalaciones2,calculoEstructural2" data-unlocks="disenoArquitectonico8,investigacion3FormulacionProyecto,practicaIntegrada1">
+                        <h4>Diseño Arquitectónico 7</h4>
+                        <p>Créditos: 8</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="presentacion2" data-prerequisites="dibujoConstructivo">
+                        <h4>Presentación 2</h4>
+                        <p>Créditos: 3</p>
+                        <button class="approve-btn" disabled>Aprobado</button>
+                    </div>
+                    <div class="course" data-id="instalaciones3" data-prerequisites="construccion3,instalaciones2" data-unlocks="disenoArquitectonico8,practicaIntegrada1">
+                        <h4>Instalaciones 3</h4>
+                        <p>Créditos: 4</p>
+                        <button class="approve-
